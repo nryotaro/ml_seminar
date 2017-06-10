@@ -1,18 +1,21 @@
-\documentclass[dvipdfmx,uplatex]{beamer}
+\documentclass[dvipdfmx,platex]{beamer}
 \usetheme{metropolis}           % Use metropolis theme
 \usepackage[deluxe]{otf}% 多書体設定を使う
 % \renewcommand{\kanjifamilydefault}{gt}
-\title{A minimal example}
-\date{\today}
-\author{Matthias Vogelgesang}
-\institute{Centre for Modern Beamer Themes}
+\title{{\mgfamily 機械学習勉強会 第1回}}
+\date{June 13, 2017}
+\author{{\mgfamily 中村 遼太郎}}
+\institute{}
 \begin{document}
-  \maketitle
-  \section{First Section}
-  \begin{frame}{First Frame}
-    あお
-\mgfamily % 丸ゴシック体
-は非アレ。
+\mgfamily
+\maketitle
+\begin{frame}{Table of contents}
+  \setbeamertemplate{section in toc}[sections numbered]
+  \tableofcontents[hideallsubsections]
+\end{frame}
 
-  \end{frame}
+\section{{\mgfamily 今回の講義の目標}}
+\begin{frame}{{\mgfamily 今回の講義の目標}}
+次回以降に学ぶアルゴリズムと例題の概要を知る
+\end{frame}
 \end{document}
