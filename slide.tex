@@ -14,8 +14,48 @@
   \tableofcontents[hideallsubsections]
 \end{frame}
 
-\section{{\mgfamily 今回の講義の目標}}
-\begin{frame}{{\mgfamily 今回の講義の目標}}
+\begin{frame}[fragile]{{\mgfamily 今日の講義の目標}}
 次回以降に学ぶアルゴリズムと例題の概要を知る
 \end{frame}
+\part{Supervised learning}
+\begin{frame}{パラメトリック法}
+  モデル（数式）を仮定し，モデルの最適なパラメタを学習する
+\end{frame}
+\section{Classification}
+\begin{frame}{分類}
+  クラスに分類された既存データを元に新規データを分類する
+\end{frame}
+\section{Perceptron}
+\begin{frame}{パーセプトロン, モデル}
+  線形モデル$f$を設定する
+\end{frame}
+\begin{frame}{パーセプトロン, 評価基準}
+  誤分類の度合$E$が最小になる$w_i$を求める
+\end{frame}
+\begin{frame}{ロジスティック回帰, モデル}
+  パーセプトロンと同じく線形モデル$f$を設定する
+\end{frame}
+\begin{frame}{ロジスティック回帰, モデル}
+  ただし，$|f|$が大きいほど$t$である確率が高いとする
+\end{frame}
+\begin{frame}{ロジスティック回帰, モデル}
+  ただし，$|f|$が大きいほど$t$である確率が高いとする
+\end{frame}
+\begin{frame}{ロジスティック回帰, 評価基準}
+  データが得られる確率$P$を最大にする$w_i$を求める
+\end{frame}
+\section{Regression}
+\begin{frame}{ロジスティック回帰, 評価基準}
+  データが得られる確率$P$を最大にする$w_i$を求める
+\end{frame}
 \end{document}
+
+
+\begin{frame}[fragile]{{\mgfamily アルゴリズムの分類}}
+  求めるモデル（数式）のパラメタを求めるかどうか
+  データがパラメタを含むモデル（数式）に従うと仮定するか否かで分かれる
+  \begin{itemize}
+  \item パラメトリック
+  \item ノンパラメトリック
+  \end{itemize}
+\end{frame}
