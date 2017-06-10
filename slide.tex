@@ -12,7 +12,10 @@
 \begin{frame}{Table of contents}
   \setbeamertemplate{section in toc}[sections numbered]
   % \tableofcontents[hideallsubsections]
+  Supervised Learning
   \tableofcontents[part=1]
+  Unsupervised Learning
+  \tableofcontents[part=2]
 \end{frame}
 
 \begin{frame}[fragile]{{\mgfamily 今日の講義の目標}}
@@ -50,12 +53,19 @@
   データが$M$次多項式$f$に従うとする
 \end{frame}
 \begin{frame}{回帰分析, モデル}
-  ただし，$x_n$の観測値$t$は，正規分布の確率密度関数に従い$f(x_n)\pm\sigma$の範囲に散らばる  
+  ただし，$x_n$の観測値$t$は正規分布に従い$f(x_n)\pm\sigma$に散らばる  
 \end{frame}
 \begin{frame}{回帰分析, 評価基準}
   訓練データの集合が生じる確率$P$を最大にするパラメタを求める
 \end{frame}
-
+\part{Unsupervised Learning}
+\section{k-means clustering}
+\begin{frame}{k平均法}
+  データ間の距離を求め，データをk個のクラスタに分ける
+\end{frame}
+\begin{frame}{k平均法の適用例}
+  ピクセルの色を似ている代表色に置き換えて減色する
+\end{frame}
 \end{document}
 
 
