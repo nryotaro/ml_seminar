@@ -125,6 +125,21 @@
 \end{frame}
 \begin{frame}{ロジスティック回帰, モデル}
   ただし，$|f|$が大きいほど$t$である確率が高いとする
+  \begin{columns}[T,onlytextwidth]
+    \column{0.50\textwidth}
+    ロジスティック関数
+    \[\sigma\left(\alpha\right)=\frac{1}{1+e^{-\alpha}}\]
+    を導入し，\\
+    $(x',y')$が$t=1$である確率を\\
+    \[0 < \sigma \left(f\left(x',y'\right)\right) < 1\]
+    とする
+    \column{0.50\textwidth}
+    \begin{figure}
+      \centering
+      \includegraphics[width=5cm]{fig/sigmoid.eps}
+      \caption{{\mgfamily ロジスティック関数のグラフ}}
+    \end{figure}
+  \end{columns}
 \end{frame}
 \begin{frame}{ロジスティック回帰, 評価基準}
   訓練データが得られる確率$P$を最大にする$w_i$を求める
