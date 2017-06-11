@@ -72,10 +72,23 @@
 \end{frame}
 \section{Perceptron}
 \begin{frame}{パーセプトロン, モデル}
-  線形モデル$f$を設定する
+  線形なモデル$f$を設定する
+  \begin{columns}[T,onlytextwidth]
+    \column{0.50\textwidth}
+    \[f(x,y)=w_0+w_1x+w_2y\]
+    \[f(x,y)>0\Rightarrow t = +1\]
+    \[f(x,y)<0\Rightarrow t = -1\]
+    \column{0.50\textwidth}
+    \begin{figure}
+      \centering
+      \includegraphics[width=5cm]{fig/scatter.eps}
+      \caption{{\mgfamily 属性値$t=\pm1$をもつデータ群}}
+    \end{figure}
+  \end{columns}
+  直線上の点$(x',y')$は$f(x',y')=0$をみたす
 \end{frame}
 \begin{frame}{パーセプトロン, 評価基準}
-  誤分類の度合$E$が最小になる$w_i$を求める
+  誤分類の度合$E$が最小になる$w_i$を求める 
 \end{frame}
 \begin{frame}{ロジスティック回帰, モデル}
   パーセプトロンと同じく線形モデル$f$を設定する
