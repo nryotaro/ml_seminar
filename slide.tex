@@ -1,5 +1,6 @@
 \documentclass[dvipdfmx,platex]{beamer}
-\usetheme{metropolis}           % Use metropolis theme
+\usetheme{metropolis}% Use metropolis theme
+\usepackage{booktabs}
 \usepackage[deluxe]{otf}% 多書体設定を使う
 % \renewcommand{\kanjifamilydefault}{gt}
 \title{{\mgfamily 機械学習勉強会 第1回}}
@@ -12,14 +13,26 @@
 \begin{frame}{Table of contents}
   \setbeamertemplate{section in toc}[sections numbered]
   % \tableofcontents[hideallsubsections]
+  % 分類が変
   Supervised Learning
   \tableofcontents[part=1]
   Unsupervised Learning
   \tableofcontents[part=2]
 \end{frame}
-
-\begin{frame}[fragile]{{\mgfamily 今日の講義の目標}}
-次回以降に学ぶアルゴリズムと例題の概要を知る
+\begin{frame}[fragile]{{\mgfamily 今日の目標}}
+  次回以降に学ぶアルゴリズムと例題の概要を知る
+  \begin{table}
+    \caption{アルゴリズムと適用例}
+    \begin{tabular}{@{} ll @{}}
+      \toprule
+      アルゴリズム & 適用例\\
+      \midrule
+      分類 & スパムメール判定\\
+      回帰分析 & 売上予測\\
+      クラスタリング & 画像の減色処理\\
+      \bottomrule
+    \end{tabular}
+  \end{table}
 \end{frame}
 \part{Supervised Learning}
 \begin{frame}{パラメトリック法}
