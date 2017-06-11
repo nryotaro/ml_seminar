@@ -2,6 +2,7 @@
 \usetheme{metropolis}% Use metropolis theme
 \usepackage{booktabs}
 \usepackage[deluxe]{otf}% 多書体設定を使う
+\usepackage[labelformat=empty]{caption}
 % \renewcommand{\kanjifamilydefault}{gt}
 \title{{\mgfamily 機械学習勉強会 第1回}}
 \date{June 13, 2017}
@@ -22,7 +23,7 @@
 \begin{frame}[fragile]{{\mgfamily 今日の目標}}
   次回以降に学ぶアルゴリズムと例題の概要を知る
   \begin{table}
-    \caption{アルゴリズムと適用例}
+    \caption{{\mgfamily アルゴリズムと適用例}}
     \begin{tabular}{@{} ll @{}}
       \toprule
       アルゴリズム & 適用例\\
@@ -37,6 +38,22 @@
 \part{Supervised Learning}
 \begin{frame}{パラメトリック法}
   モデル（数式）を仮定し，モデルの最適なパラメタを学習する
+  % \vspace{20pt}
+  \begin{columns}[T,onlytextwidth]
+    \column{0.50\textwidth}
+    パラメトリック法の手順
+    \begin{enumerate}
+    \item データの予測モデルを仮定
+    \item モデルのパラメタの評価基準を決める
+    \item パラメタを決める
+    \end{enumerate}
+    \column{0.50\textwidth}
+    \begin{figure}
+      \centering
+      \includegraphics[width=5cm]{fig/arrange_params.eps}
+      \caption{{\mgfamily 一次関数のモデルのパラメタ調整}}
+    \end{figure}
+  \end{columns}
 \end{frame}
 \section{Classification}
 \begin{frame}{分類}

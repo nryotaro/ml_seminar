@@ -12,3 +12,4 @@
 sample
 *.synctex.gz
 *.vrb
+.ipynb_checkpoints
