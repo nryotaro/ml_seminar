@@ -110,9 +110,18 @@
 \end{frame}
 \begin{frame}{ロジスティック回帰, モデル}
   パーセプトロンと同じく線形モデル$f$を設定する
-\end{frame}
-\begin{frame}{ロジスティック回帰, モデル}
-  ただし，$|f|$が大きいほど$t$である確率が高いとする
+  \begin{columns}[T,onlytextwidth]
+    \column{0.50\textwidth}
+    \[f(x,y)=w_0+w_1x+w_2y\]
+    \[f(x,y)>0\Rightarrow t = +1\]
+    \[f(x,y)<0\Rightarrow t = -1\]
+    \column{0.50\textwidth}
+    \begin{figure}
+      \centering
+      \includegraphics[width=5cm]{fig/direction.eps}
+      \caption{$f(x,y)${\mgfamily が増加する向き}}
+    \end{figure}
+  \end{columns}
 \end{frame}
 \begin{frame}{ロジスティック回帰, モデル}
   ただし，$|f|$が大きいほど$t$である確率が高いとする
@@ -139,13 +148,3 @@
   ピクセルの色を似ている代表色に置き換えて減色する
 \end{frame}
 \end{document}
-
-
-\begin{frame}[fragile]{{\mgfamily アルゴリズムの分類}}
-  求めるモデル（数式）のパラメタを求めるかどうか
-  データがパラメタを含むモデル（数式）に従うと仮定するか否かで分かれる
-  \begin{itemize}
-  \item パラメトリック
-  \item ノンパラメトリック
-  \end{itemize}
-\end{frame}
