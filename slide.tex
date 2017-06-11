@@ -151,14 +151,21 @@
   訓練データは最も発生確率が高いデータであると仮定している
 \end{frame}
 \section{Regression}
-\begin{frame}{回帰分析, モデル}
-  データが$M$次多項式$f$に従うとする
-\end{frame}
-\begin{frame}{回帰分析, モデル}
-  ただし，$x_n$の観測値$t$は正規分布に従い$f(x_n)\pm\sigma$に散らばる  
-\end{frame}
-\begin{frame}{回帰分析, 評価基準}
-  訓練データの集合が生じる確率$P$を最大にするパラメタを求める
+\begin{frame}{回帰分析, モデルと評価}
+  データが$M$次多項式$f$に従うとして，二乗誤差$E_D$を最小にするパラメタを選ぶ
+  \begin{columns}[T,onlytextwidth]
+    \column{0.50\textwidth}
+    \begin{align*}
+      f(x)&=\sum_{m=0}^{M}w_mx^{m}\\
+      E_{D}&=\frac{1}{2}\sum_{n=1}^{N}{\left\{f(x_n)-t_n\right\}}^2
+    \end{align*}
+    \column{0.50\textwidth}
+    \begin{figure}
+      \centering
+      \includegraphics[width=5cm]{fig/polyreg.eps}
+      \caption{$M\in\{3,4,5\}${\mgfamily の多項式近似例}}
+    \end{figure}
+  \end{columns}
 \end{frame}
 \part{Unsupervised Learning}
 \section{k-means clustering}
@@ -169,3 +176,13 @@
   ピクセルの色を似ている代表色に置き換えて減色する
 \end{frame}
 \end{document}
+
+\begin{frame}{回帰分析, モデル}
+  データが$M$次多項式$f$に従うとする
+\end{frame}
+\begin{frame}{回帰分析, モデル}
+  ただし，$x_n$の観測値$t$は正規分布に従い$f(x_n)\pm\sigma$に散らばる  
+\end{frame}
+\begin{frame}{回帰分析, 評価基準}
+  訓練データの集合が生じる確率$P$を最大にするパラメタを求める
+\end{frame}
