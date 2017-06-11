@@ -143,6 +143,12 @@
 \end{frame}
 \begin{frame}{ロジスティック回帰, 評価基準}
   訓練データが得られる確率$P$を最大にする$w_i$を求める
+
+  \begin{align*}
+    p(x,y)&=\sigma(x_0+w_1x+w_2y)\\
+    P&=\prod_{i}^{N}{p\left(x_i,y_i\right)}^{t_n}{\left\{1-p\left(x_i,y_i\right)\right\}}^{1-t_n}
+  \end{align*}  
+  訓練データは最も発生確率が高いデータであると仮定している
 \end{frame}
 \section{Regression}
 \begin{frame}{回帰分析, モデル}
