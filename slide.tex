@@ -171,9 +171,33 @@
 \section{Clustering}
 \begin{frame}{k平均法}
   データ間の距離を求め，データをk個のクラスタに分ける
+  \begin{columns}[T,onlytextwidth]
+    \column{0.50\textwidth}
+    \begin{figure}
+      \centering
+      \includegraphics[width=5cm]{fig/cluster.eps}
+      \caption{{\mgfamily データ集合}}
+    \end{figure}
+    \column{0.50\textwidth}
+    \begin{figure}
+      \centering
+      \includegraphics[width=5cm]{fig/colored_scatter.eps}
+      \caption{$k=3${\mgfamily のクラスタ}}
+    \end{figure}
+  \end{columns}  
+  クラスタごとに代表データを決め，代表の近くのデータ集合で\\クラスタを作る
 \end{frame}
 \begin{frame}{k平均法の適用例}
   ピクセルの色を似ている代表色に置き換えて減色する
+\end{frame}
+\begin{frame}{k平均法のアルゴリズム}
+  \begin{align*}
+    \text{入力}&\text{: データ集合}D=\left\{\mathbf{x}^{(1)},\mathbf{x}^{(2)},\cdots,\mathbf{x}^{(|D|)} \right\}\\
+   &\text{: クラスタ数}k
+  \end{align*}  
+  \[
+  \text{無作為に}\mathbf{m_1}, \mathbf{m_2}\cdots,\mathbf{m_k}
+  \]
 \end{frame}
 \end{document}
 
