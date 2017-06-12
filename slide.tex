@@ -194,6 +194,20 @@
 \end{frame}
 \begin{frame}{k平均法の適用例}
   ピクセルの色を似ている代表色に置き換えて減色する
+    \begin{columns}[T,onlytextwidth]
+    \column{0.50\textwidth}
+    \begin{figure}
+      \centering
+      \includegraphics[width=5cm]{fig/doge.png}
+      \caption{{\mgfamily 減色前の犬}}
+    \end{figure}
+    \column{0.50\textwidth}
+    \begin{figure}
+      \centering
+      \includegraphics[width=5cm]{fig/doge_q.png}
+      \caption{$k=5${\mgfamily で減色された犬}}
+    \end{figure}
+  \end{columns}
 \end{frame}
 \begin{frame}{k平均法のアルゴリズム}
   \begin{align*}
@@ -203,8 +217,8 @@
   無作為に$\mathbf{m_1}, \mathbf{m_2}\cdots,\mathbf{m_{\textit{k}}}$を決める\\
 \texttt{until} 収束\\
 \texttt{\ \ foreach} $\mathbf{x^{(\textit{i})}}\in D$\\
-\textbf{\ \ \ \ }$\textrm{c}_{\textrm{max}} = \argmax_{\textrm{c}} \textit{\textrm{sim}}\left(\mathbf{x}^{(\textit{i})},\textbf{m}_{\textit{c}}\right)$ データ集合の分割\\
-\textbf{\ \ \ \ }$\texttt{insert}\ \mathbf{x}^{(\textit{i})}\texttt{into}\ \textrm{c}_{\textrm{max}}$\\
+\textbf{\ \ \ \ \ \ }$\textrm{c}_{\textrm{max}} = \argmax_{\textrm{c}} \textit{\textrm{sim}}\left(\mathbf{x}^{(\textit{i})},\textbf{m}_{\textit{c}}\right)$ データ集合の分割\\
+\textbf{\ \ \ \ \ \ }$\texttt{insert}\ \mathbf{x}^{(\textit{i})}\texttt{into}\ \textrm{c}_{\textrm{max}}$\\
 \texttt{\ \ end\ foreach}
 \[
 \forall \textit{c}, \mathbf{m}_{\textit{c}}=\frac{1}{|\textit{c}|}\sum_{\textit{x}^{(i)}\in \textit{c}}\mathbf{x}^{(\textit{i})}\ \ \text{代表ベクトルを再計算}
