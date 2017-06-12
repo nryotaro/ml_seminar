@@ -1,9 +1,14 @@
 \documentclass[dvipdfmx,platex]{beamer}
 \usetheme{metropolis}% Use metropolis theme
 \usepackage{booktabs}
+\usepackage{amsmath}
 \usepackage[deluxe]{otf}% 多書体設定を使う
 \usepackage[labelformat=empty]{caption}
 % \renewcommand{\kanjifamilydefault}{gt}
+\newcommand{\argmax}{\mathop{\rm arg~max}\limits}
+\newcommand{\argmin}{\mathop{\rm arg~min}\limits}
+
+     
 \title{{\mgfamily 機械学習勉強会 第1回}}
 \date{June 13, 2017}
 \author{{\mgfamily 中村 遼太郎}}
@@ -184,7 +189,7 @@
       \includegraphics[width=5cm]{fig/colored_scatter.eps}
       \caption{$k=3${\mgfamily のクラスタ}}
     \end{figure}
-  \end{columns}  
+  \end{columns}
   クラスタごとに代表データを決め，代表の近くのデータ集合で\\クラスタを作る
 \end{frame}
 \begin{frame}{k平均法の適用例}
@@ -195,9 +200,16 @@
     \text{入力}&\text{: データ集合}D=\left\{\mathbf{x}^{(1)},\mathbf{x}^{(2)},\cdots,\mathbf{x}^{(|D|)} \right\}\\
    &\text{: クラスタ数}k
   \end{align*}  
-  \[
-  \text{無作為に}\mathbf{m_1}, \mathbf{m_2}\cdots,\mathbf{m_k}
-  \]
+  無作為に$\mathbf{m_1}, \mathbf{m_2}\cdots,\mathbf{m_{\textit{k}}}$を決める\\
+\texttt{until} 収束\\
+\texttt{\ \ foreach} $\mathbf{x^{(\textit{i})}}\in D$\\
+\textbf{\ \ \ \ }$\textrm{c}_{\textrm{max}} = \argmax_{\textrm{c}} \textit{\textrm{sim}}\left(\mathbf{x}^{(\textit{i})},\textbf{m}_{\textit{c}}\right)$ データ集合の分割\\
+\textbf{\ \ \ \ }$\texttt{insert}\ \mathbf{x}^{(\textit{i})}\texttt{into}\ \textrm{c}_{\textrm{max}}$\\
+\texttt{\ \ end\ foreach}
+\[
+\forall \textit{c}, \mathbf{m}_{\textit{c}}=\frac{1}{|\textit{c}|}\sum_{\textit{x}^{(i)}\in \textit{c}}\mathbf{x}^{(\textit{i})}\ \ \text{代表ベクトルを再計算}
+\]
+\texttt{end until}
 \end{frame}
 \end{document}
 
