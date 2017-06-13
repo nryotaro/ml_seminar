@@ -100,7 +100,7 @@
   \end{columns}
   直線上の点$(x',y')$は$f(x',y')=0$をみたす
 \end{frame}
-\begin{frame}{{\mgfamily パーセプトロン, 評価基準}}
+\begin{frame}{{\mgfamily パーセプトロン, 評価基準（誤差関数）}}
   誤差関数$E$が最小になる$w_i$を求める
   \begin{columns}[T,onlytextwidth]
     \column{0.50\textwidth}
@@ -154,7 +154,7 @@
     \end{figure}
   \end{columns}
 \end{frame}
-\begin{frame}{{\mgfamily ロジスティック回帰, 評価基準}}
+\begin{frame}{{\mgfamily ロジスティック回帰, 評価基準（最尤推定）}}
   訓練データが得られる確率$P$を最大にする$w_i$を求める
 
   \begin{align*}
@@ -164,7 +164,7 @@
   訓練データは最も発生確率が高いデータであると仮定している
 \end{frame}
 \section{Regression}
-\begin{frame}{{\mgfamily 回帰分析, モデルと評価基準}}
+\begin{frame}{{\mgfamily 回帰分析, モデルと評価基準（最小二乗）}}
   データが$M$次多項式$f$に従うとして，二乗誤差$E_D$を最小にするパラメタ$w_{\textit{i}}$を選ぶ
   \begin{columns}[T,onlytextwidth]
     \column{0.50\textwidth}
@@ -200,6 +200,22 @@
   \end{columns}
   クラスタごとに代表データを決め，代表の近くのデータ集合で\\クラスタを作る
 \end{frame}
+\begin{frame}{{\mgfamily k平均法のアルゴリズム}}
+  \begin{align*}
+    \text{入力}&\text{: データ集合}D=\left\{\mathbf{x}^{(1)},\mathbf{x}^{(2)},\cdots,\mathbf{x}^{(|D|)} \right\}\\
+   &\text{: クラスタ数}k
+  \end{align*}  
+  無作為に$\mathbf{m_1}, \mathbf{m_2}\cdots,\mathbf{m_{\textit{k}}}$を決める\\
+\texttt{until} 収束\\
+\texttt{\ \ foreach} $\mathbf{x^{(\textit{i})}}\in D$\\
+\textbf{\ \ \ \ \ \ }$\textrm{c}_{\textrm{max}} = \argmax_{\textrm{c}} \textit{\textrm{sim}}\left(\mathbf{x}^{(\textit{i})},\textbf{m}_{\textit{c}}\right)$ データ集合の分割\\
+\textbf{\ \ \ \ \ \ }$\texttt{insert}\ \mathbf{x}^{(\textit{i})}\texttt{into}\ \textrm{c}_{\textrm{max}}$\\
+\texttt{\ \ end\ foreach}
+\[
+\forall \textit{c}, \mathbf{m}_{\textit{c}}=\frac{1}{|\textit{c}|}\sum_{\textit{x}^{(i)}\in \textit{c}}\mathbf{x}^{(\textit{i})}\ \ \text{代表ベクトルを再計算}
+\]
+\texttt{end until}
+\end{frame}
 \begin{frame}{{\mgfamily k平均法の適用例}}
   ピクセルの色を似ている代表色に置き換えて減色する
     \begin{columns}[T,onlytextwidth]
@@ -217,22 +233,7 @@
     \end{figure}
   \end{columns}
 \end{frame}
-\begin{frame}{{\mgfamily k平均法のアルゴリズム}}
-  \begin{align*}
-    \text{入力}&\text{: データ集合}D=\left\{\mathbf{x}^{(1)},\mathbf{x}^{(2)},\cdots,\mathbf{x}^{(|D|)} \right\}\\
-   &\text{: クラスタ数}k
-  \end{align*}  
-  無作為に$\mathbf{m_1}, \mathbf{m_2}\cdots,\mathbf{m_{\textit{k}}}$を決める\\
-\texttt{until} 収束\\
-\texttt{\ \ foreach} $\mathbf{x^{(\textit{i})}}\in D$\\
-\textbf{\ \ \ \ \ \ }$\textrm{c}_{\textrm{max}} = \argmax_{\textrm{c}} \textit{\textrm{sim}}\left(\mathbf{x}^{(\textit{i})},\textbf{m}_{\textit{c}}\right)$ データ集合の分割\\
-\textbf{\ \ \ \ \ \ }$\texttt{insert}\ \mathbf{x}^{(\textit{i})}\texttt{into}\ \textrm{c}_{\textrm{max}}$\\
-\texttt{\ \ end\ foreach}
-\[
-\forall \textit{c}, \mathbf{m}_{\textit{c}}=\frac{1}{|\textit{c}|}\sum_{\textit{x}^{(i)}\in \textit{c}}\mathbf{x}^{(\textit{i})}\ \ \text{代表ベクトルを再計算}
-\]
-\texttt{end until}
-\end{frame}
+
 \end{document}
 
 \begin{frame}{回帰分析, モデル}
