@@ -1,6 +1,7 @@
 \documentclass[dvipdfmx,platex]{beamer}
 \usetheme{metropolis}% Use metropolis theme
 \usepackage{booktabs}
+\usepackage{comment}
 \usepackage{amsmath}
 \usepackage[deluxe]{otf}% 多書体設定を使う
 \usepackage[labelformat=empty]{caption}
@@ -26,9 +27,9 @@
   \tableofcontents[part=2]
 \end{frame}
 \begin{frame}[fragile]{{\mgfamily 今日の目標}}
-  次回以降に学ぶアルゴリズムと例題の概要を知る
+  次回以降に学ぶアルゴリズムの概要を知る
   \begin{table}
-    \caption{{\mgfamily アルゴリズムと適用例}}
+    \caption{{\mgfamily アルゴリズムと適用例}}    
     \begin{tabular}{@{} ll @{}}
       \toprule
       アルゴリズム & 適用例\\
@@ -41,15 +42,15 @@
   \end{table}
 \end{frame}
 \part{Supervised Learning}
-\begin{frame}{パラメトリック法}
-  モデル（数式）を仮定し，モデルの最適なパラメタを学習する
-  % \vspace{20pt}
+\begin{frame}{{\mgfamily パラメトリック法}}
+  モデル（数式）を仮定し，モデルの最適なパラメタを学習する  
+  \vspace{20pt}
   \begin{columns}[T,onlytextwidth]
     \column{0.50\textwidth}
     パラメトリック法の手順
     \begin{enumerate}
     \item データの予測モデルを仮定
-    \item モデルのパラメタの評価基準を決める
+    \item モデルのパラメタの\\評価基準を決める
     \item パラメタを決める
     \end{enumerate}
     \column{0.50\textwidth}
@@ -61,22 +62,29 @@
   \end{columns}
 \end{frame}
 \section{Classification}
-\begin{frame}{分類}
+\begin{frame}{{\mgfamily 分類}}
   クラスに分類された既存データを元に新規データを分類する
-  \begin{table}
-    \caption{{\mgfamily アルゴリズムとパラメタの決め方}}
-    \begin{tabular}{@{} ll @{}}
-      \toprule
-      アルゴリズム &パラメタの決め方\\
-      \midrule
-      パーセプトロン & 確率的勾配降下法\\
-      ロジスティク回帰 & 最尤推定法\\
-      \bottomrule
-    \end{tabular}
-  \end{table}
+
+  \vspace{20pt}
+  アルゴリズム
+  \begin{itemize}
+  \item パーセプトロン
+  \item ロジスティック回帰
+  \end{itemize}
+%  \begin{table}
+%    \caption{{\mgfamily アルゴリズムとパラメタの決め方}}
+%    \begin{tabular}{@{} ll @{}}      
+%      \toprule
+%      アルゴリズム &パラメタの決め方\\
+%      \midrule
+%      パーセプトロン & 確率的勾配降下法\\
+%      ロジスティク回帰 & 最尤推定法\\
+%      \bottomrule
+%    \end{tabular}
+%  \end{table}
 \end{frame}
 \section{Perceptron}
-\begin{frame}{パーセプトロン, モデル}
+\begin{frame}{{\mgfamily パーセプトロン, モデル}}
   線形なモデル$f$を設定する
   \begin{columns}[T,onlytextwidth]
     \column{0.50\textwidth}
@@ -92,8 +100,8 @@
   \end{columns}
   直線上の点$(x',y')$は$f(x',y')=0$をみたす
 \end{frame}
-\begin{frame}{パーセプトロン, 評価基準}
-  誤分類の度合$E$が最小になる$w_i$を求める
+\begin{frame}{{\mgfamily パーセプトロン, 評価基準}}
+  誤差関数$E$が最小になる$w_i$を求める
   \begin{columns}[T,onlytextwidth]
     \column{0.50\textwidth}
     \begin{align*}
@@ -113,7 +121,7 @@
     \end{figure}
   \end{columns}
 \end{frame}
-\begin{frame}{ロジスティック回帰, モデル}
+\begin{frame}{{\mgfamily ロジスティック回帰, モデル}}
   パーセプトロンと同じく線形モデル$f$を設定する
   \begin{columns}[T,onlytextwidth]
     \column{0.50\textwidth}
@@ -128,7 +136,7 @@
     \end{figure}
   \end{columns}
 \end{frame}
-\begin{frame}{ロジスティック回帰, モデル}
+\begin{frame}{{\mgfamily ロジスティック回帰, モデル}}
   ただし，$|f|$が大きいほど$t$である確率が高いとする
   \begin{columns}[T,onlytextwidth]
     \column{0.50\textwidth}
@@ -146,7 +154,7 @@
     \end{figure}
   \end{columns}
 \end{frame}
-\begin{frame}{ロジスティック回帰, 評価基準}
+\begin{frame}{{\mgfamily ロジスティック回帰, 評価基準}}
   訓練データが得られる確率$P$を最大にする$w_i$を求める
 
   \begin{align*}
@@ -156,7 +164,7 @@
   訓練データは最も発生確率が高いデータであると仮定している
 \end{frame}
 \section{Regression}
-\begin{frame}{回帰分析, モデルと評価}
+\begin{frame}{{\mgfamily 回帰分析, モデルと評価基準}}
   データが$M$次多項式$f$に従うとして，二乗誤差$E_D$を最小にするパラメタ$w_{\textit{i}}$を選ぶ
   \begin{columns}[T,onlytextwidth]
     \column{0.50\textwidth}
@@ -174,7 +182,7 @@
 \end{frame}
 \part{Unsupervised Learning}
 \section{Clustering}
-\begin{frame}{k平均法}
+\begin{frame}{{\mgfamily k平均法}}
   データ間の距離を求め，データをk個のクラスタに分ける
   \begin{columns}[T,onlytextwidth]
     \column{0.50\textwidth}
@@ -192,7 +200,7 @@
   \end{columns}
   クラスタごとに代表データを決め，代表の近くのデータ集合で\\クラスタを作る
 \end{frame}
-\begin{frame}{k平均法の適用例}
+\begin{frame}{{\mgfamily k平均法の適用例}}
   ピクセルの色を似ている代表色に置き換えて減色する
     \begin{columns}[T,onlytextwidth]
     \column{0.50\textwidth}
@@ -209,7 +217,7 @@
     \end{figure}
   \end{columns}
 \end{frame}
-\begin{frame}{k平均法のアルゴリズム}
+\begin{frame}{{\mgfamily k平均法のアルゴリズム}}
   \begin{align*}
     \text{入力}&\text{: データ集合}D=\left\{\mathbf{x}^{(1)},\mathbf{x}^{(2)},\cdots,\mathbf{x}^{(|D|)} \right\}\\
    &\text{: クラスタ数}k
